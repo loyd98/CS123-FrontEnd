@@ -1,23 +1,19 @@
 import React, { Component } from "react";
 import "./App.css";
-import Navbar from "./components/navbar";
-import Rating from "./components/ratings";
-import Card from "./components/card";
+import { getProducts } from "./services/products";
+import Navbar from "./components/navbar/navbar";
+import CardList from "./components/cardList/cardList";
 
 class App extends Component {
-  state = {};
+  state = {
+    items: getProducts(),
+  };
 
   render() {
     return (
       <React.Fragment>
         <Navbar />
-        <Rating />
-        <Card
-          itemName="Burger"
-          price="75.00"
-          rating="5"
-          imgLink="https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png"
-        />
+        <CardList items={this.state.items} />
       </React.Fragment>
     );
   }

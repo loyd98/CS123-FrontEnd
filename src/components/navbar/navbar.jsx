@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./navbar.css";
+import "./navbar.scoped.css";
 
 class Navbar extends Component {
   render() {
