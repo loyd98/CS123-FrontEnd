@@ -1,0 +1,7 @@
+i {
+    color: #F6CD5B;
+}
+
+i + i {
+    margin-left: 2px;
+}
