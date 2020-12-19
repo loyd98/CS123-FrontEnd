@@ -1,0 +1,27 @@
+h1 {
+  color: #514444;
+}
+
+.container {
+  background: #ffffff;
+  width: 17rem;
+  height: 20rem;
+  border-radius: 2rem;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  position: relative;
+}
+
+.price {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 1.7rem;
+}
+
+.image {
+  width: 15rem;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
