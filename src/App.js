@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Navbar from "./components/navbar";
+import MainPicture from "./components/mainPicture"
 
 class App extends Component {
   state = {};
@@ -9,6 +10,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Navbar />
+        <MainPicture />
         <div>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
