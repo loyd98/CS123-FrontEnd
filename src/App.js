@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import Navbar from "./components/navbar";
-import Rating from "./components/ratings";
 import Card from "./components/card";
 
 class App extends Component {
@@ -11,11 +10,10 @@ class App extends Component {
     return (
       <React.Fragment>
         <Navbar />
-        <Rating />
         <Card
           itemName="Burger"
           price="75.00"
-          rating="5"
+          rating="4"
           imgLink="https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png"
         />
       </React.Fragment>
