@@ -3,15 +3,15 @@ import "./ratings.scoped.css";
 
 class Ratings extends Component {
   render() {
-    return (
-      <div className="rating">
-        <i className="far fa-star" />
-        <i className="far fa-star" />
-        <i className="far fa-star" />
-        <i className="far fa-star" />
-        <i className="far fa-star" />
-      </div>
-    );
+    var stars = [];
+    for (var i = 0; i < 5; i++) {
+      if (i < this.props.rating) {
+        stars.push(<i class="fas fa-star" />);
+      } else {
+        stars.push(<i class="far fa-star" />);
+      }
+    }
+    return <div className="rating">{stars}</div>;
   }
 }
 
