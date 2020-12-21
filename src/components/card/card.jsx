@@ -10,8 +10,8 @@ class Card extends Component {
       <div className="container">
         <h1>{itemName}</h1>
         <img src={imgLink} className="image" alt="Food Item" />
-        <Rating className="rating" rating={rating} />
         <h1 className="price">{`P${price}`}</h1>
+        <Rating rating={rating} />
       </div>
     );
   }

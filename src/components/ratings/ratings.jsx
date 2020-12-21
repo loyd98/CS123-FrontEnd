@@ -5,11 +5,11 @@ class Ratings extends Component {
   render() {
     return (
       <div className="rating">
-        <i class="far fa-star" />
-        <i class="far fa-star" />
-        <i class="far fa-star" />
-        <i class="far fa-star" />
-        <i class="far fa-star" />
+        <i className="far fa-star" />
+        <i className="far fa-star" />
+        <i className="far fa-star" />
+        <i className="far fa-star" />
+        <i className="far fa-star" />
       </div>
     );
   }

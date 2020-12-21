@@ -5,16 +5,18 @@ nav {
 }
 
 .menu {
+  max-width: 1300px;
+  width: 90%;
   margin: 1rem auto 0 auto;
   background: #f6cd5b;
   box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
-  width: 90%;
   height: 2.8rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
+  position: relative;
 }
 
 .menu-group {
@@ -38,9 +40,9 @@ nav {
 
 .logo {
   z-index: 1;
-  top: -3rem;
-  left: 10%;
-  position: fixed;
+  top: -4rem;
+  left: 2rem;
+  position: absolute;
   background: #d72d1f;
   width: 6rem;
   height: 6rem;
