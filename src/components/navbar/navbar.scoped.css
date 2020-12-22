@@ -4,10 +4,15 @@ nav {
   z-index: 100;
 }
 
+.container {
+  padding-top: 1rem;
+  position: relative;
+}
+
 .menu {
   max-width: 1300px;
   width: 90%;
-  margin: 1rem auto 0 auto;
+  margin: 0 auto 0 auto;
   background: #f6cd5b;
   box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.2);
   border-radius: 0.5rem;
@@ -41,7 +46,7 @@ nav {
 .logo {
   z-index: 1;
   top: -4rem;
-  left: 2rem;
+  left: 2.5rem;
   position: absolute;
   background: #d72d1f;
   width: 6rem;

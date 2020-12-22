@@ -8,6 +8,26 @@ import CardList from "./components/cardList/cardList";
 class App extends Component {
   state = {
     items: getProducts(),
+    currentPage: 1,
+    itemsPerPage: 8,
+  };
+
+  handleIncrement = () => {
+    const numberOfPages = Math.ceil(
+      this.state.items.length / this.state.itemsPerPage
+    );
+
+    if (this.state.currentPage < numberOfPages) {
+      this.setState({ currentPage: this.state.currentPage + 1 });
+    }
+  };
+
+  handleDecrement = () => {
+    if (this.state.currentPage > 1) {
+      this.setState({
+        currentPage: this.state.currentPage - 1,
+      });
+    }
   };
 
   render() {
@@ -15,7 +35,13 @@ class App extends Component {
       <React.Fragment>
         <Navbar />
         <MainPicture />
-        <CardList items={this.state.items} />
+        <CardList
+          items={this.state.items}
+          currentPage={this.state.currentPage}
+          itemsPerPage={this.state.itemsPerPage}
+          onIncrement={this.handleIncrement}
+          onDecrement={this.handleDecrement}
+        />
       </React.Fragment>
     );
   }

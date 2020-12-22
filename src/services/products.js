@@ -63,6 +63,70 @@ const products = [
       "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
     price: 75.0,
   },
+  {
+    _id: 9,
+    name: "Fries",
+    rating: 5,
+    imgLink:
+      "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    price: 75.0,
+  },
+  {
+    _id: 10,
+    name: "Fries",
+    rating: 5,
+    imgLink:
+      "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    price: 75.0,
+  },
+  {
+    _id: 11,
+    name: "Fries",
+    rating: 5,
+    imgLink:
+      "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    price: 75.0,
+  },
+  {
+    _id: 12,
+    name: "Fries",
+    rating: 5,
+    imgLink:
+      "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    price: 75.0,
+  },
+  {
+    _id: 13,
+    name: "Fries",
+    rating: 5,
+    imgLink:
+      "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    price: 75.0,
+  },
+  {
+    _id: 14,
+    name: "Fries",
+    rating: 5,
+    imgLink:
+      "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    price: 75.0,
+  },
+  {
+    _id: 15,
+    name: "Fries",
+    rating: 5,
+    imgLink:
+      "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    price: 75.0,
+  },
+  {
+    _id: 16,
+    name: "Fries",
+    rating: 5,
+    imgLink:
+      "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    price: 75.0,
+  },
 ];
 
 export function getProducts() {

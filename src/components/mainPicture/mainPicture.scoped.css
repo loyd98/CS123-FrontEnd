@@ -1,28 +1,28 @@
 .container {
-    height: 100vh;
-    position: relative
+  height: 768px;
+  position: relative;
 }
 
 .mainPicture {
-    text-align: center;
+  text-align: center;
 }
 
 .image {
-    position: absolute;
-    float: left;
+  position: absolute;
+  float: left;
 }
 
 img {
-    width: 40rem
+  width: 40rem;
 }
 
 .caption {
-    position: absolute;
-    float: right;
-    top: 20rem;
-    right: 20rem;
+  position: absolute;
+  float: right;
+  top: 20rem;
+  right: 20rem;
 }
 
 h1 {
-    display: block;
+  display: block;
 }

@@ -6,9 +6,9 @@ class Ratings extends Component {
     var stars = [];
     for (var i = 0; i < 5; i++) {
       if (i < this.props.rating) {
-        stars.push(<i class="fas fa-star" />);
+        stars.push(<i key={i} className="fas fa-star" />);
       } else {
-        stars.push(<i class="far fa-star" />);
+        stars.push(<i key={i} className="far fa-star" />);
       }
     }
     return <div className="rating">{stars}</div>;

@@ -4,8 +4,8 @@ h1 {
 
 .container {
   background: #ffffff;
-  width: 17rem;
-  height: 20rem;
+  width: 14rem;
+  height: 17rem;
   border-radius: 2rem;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.2);
   padding: 1rem;
@@ -20,7 +20,7 @@ h1 {
 }
 
 .image {
-  width: 15rem;
+  width: 12rem;
   margin-right: auto;
   margin-left: auto;
   display: block;
