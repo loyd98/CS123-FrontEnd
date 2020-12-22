@@ -4,6 +4,7 @@ import { getProducts } from "./services/products";
 import Navbar from "./components/navbar/navbar";
 import MainPicture from "./components/mainPicture/mainPicture";
 import CardList from "./components/cardList/cardList";
+import Footer from "./components/footer/footer";
 
 class App extends Component {
   state = {
@@ -42,6 +43,7 @@ class App extends Component {
           onIncrement={this.handleIncrement}
           onDecrement={this.handleDecrement}
         />
+        <Footer />
       </React.Fragment>
     );
   }
