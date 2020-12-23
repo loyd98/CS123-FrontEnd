@@ -3,28 +3,26 @@
 }
 
 .mainPicture {
-  position: absolute;
-  left: 250px;
-  top: 100px;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1200px;
+  height: 768px;
 }
 
 img {
+  position: absolute;
+  z-index: 1;
   width: 45rem;
+  top: 3rem;
+  left: 3rem;
 }
 
 .caption {
   position: absolute;
-  width: 474px;
-  height: 338px;
-  left: 870px;
-  top: 300px;
-}
-
-.caption h1 {
-  font-style: normal;
+  left: 40rem;
+  top: 13rem;
   font-weight: bold;
-  font-size: 150px;
+  font-size: 9rem;
   line-height: 169px;
   color: #514444;
-
 }

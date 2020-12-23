@@ -12,6 +12,7 @@
 }
 
 .hotlines {
+  margin-top: 20px;
   width: 25%;
   float: left;
 }
@@ -48,7 +49,7 @@
 .logofooter {
   width: 25%;
   float: left;
-  top: -4rem;
+  top: -4.5rem;
   left: 10%;
   position: relative;
   background: #d72d1f;
@@ -57,9 +58,9 @@
   border-radius: 100%;
 }
 
-.logofooter h1 {
+.logotext {
   position: absolute;
-  color: #f6cd5b;
+  color: #f6cd5b !important;
   font-size: 1.5rem;
   top: 3rem;
   left: 1.4rem;
@@ -80,11 +81,18 @@
   padding: 20px;
 }
 
-.rec1 {
+.rec-container {
+  max-width: 1200px;
+  height: 246px;
   position: relative;
+  margin: 0 auto;
+}
+
+.rec1 {
+  position: absolute;
   width: 150px;
   height: 150px;
-  left: 405.71px;
+  left: 240px;
   top: -87px;
 
   background: #f6cd5b;
@@ -92,11 +100,11 @@
   transform: rotate(22.63deg);
 }
 .rec2 {
-  position: relative;
+  position: absolute;
   width: 150px;
   height: 150px;
-  left: 1149.71px;
-  top: -10px;
+  right: 100px;
+  bottom: -30px;
 
   background: #f6cd5b;
   border-radius: 30px;
