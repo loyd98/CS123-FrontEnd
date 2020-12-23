@@ -1,105 +1,108 @@
-.footer{
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    text-align: center;
-    width: 100vw;
-    height: 246px;
-    overflow: hidden;
-    padding: 30px 0px;
-    box-sizing: border-box;
-    background-color: #423B42;
+.footer {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  width: 100vw;
+  height: 246px;
+  overflow: hidden;
+  padding: 30px 0px;
+  box-sizing: border-box;
+  background-color: #423b42;
 }
 
-.hotlines{
-    width: 25%;
-    float: left;
+.hotlines {
+  width: 25%;
+  float: left;
 }
 
-.socmed{
-    width: 50%;
-    float: left;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+.socmed {
+  width: 50%;
+  float: left;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.socmed ul{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.socmed ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .socmed ul li {
-    list-style: none;
-    margin: 0 15px;
-    font-size: 70px;
-    padding: 20px 0 0 0;
+  list-style: none;
+  margin: 0 15px;
+  font-size: 70px;
+  padding: 20px 0 0 0;
 }
 
-.socmed ul li a{
-    color: black;
-    
+.socmed ul li a {
+  color: black;
 }
 
-.socmed ul li .fa:visited{
-    text-decoration: none;
+.socmed ul li .fa:visited {
+  text-decoration: none;
 }
 
 .logofooter {
-    width: 25%;
-    float: left;
-    top: -4rem;
-    left: 10%; 
-    position: relative; 
-    background: #d72d1f;
-    width: 6rem;
-    height: 6rem;
-    border-radius: 100%;
-  }
-  
+  width: 25%;
+  float: left;
+  top: -4rem;
+  left: 10%;
+  position: relative;
+  background: #d72d1f;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 100%;
+}
+
 .logofooter h1 {
-    position: absolute;
-    color: #f6cd5b;
-    font-size: 1.5rem;
-    top: 3rem;
-    left: 1.4rem;
-    font-family: "Ubuntu Condensed", sans-serif;
-  }
-
-.footer h2{
-    color: #E9CA1D;
-    padding: 15px 0 0 0;
+  position: absolute;
+  color: #f6cd5b;
+  font-size: 1.5rem;
+  top: 3rem;
+  left: 1.4rem;
+  font-family: "Ubuntu Condensed", sans-serif;
 }
 
-.footer h1{
-    color: white;
+.footer h2 {
+  color: #e9ca1d;
+  padding: 15px 0 0 0;
 }
 
-.footer p{
-    color: white;
-    padding: 20px;
+.footer h1 {
+  color: white;
 }
 
-.rec1{
-    position: relative;
-    width: 150px;
-    height: 150px;
-    left: 405.71px;
-    top: -87px;
-
-    background: #F6CD5B;
-    border-radius: 30px;
-    transform: rotate(22.63deg);
+.footer p {
+  color: white;
+  padding: 20px;
 }
-.rec2{
-    position: relative;
-    width: 150px;
-    height: 150px;
-    left: 1149.71px;
-    top: -10px;
 
-    background: #F6CD5B;
-    border-radius: 30px;
-    transform: rotate(22.63deg);
+.rec1 {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  left: 405.71px;
+  top: -87px;
+
+  background: #f6cd5b;
+  border-radius: 30px;
+  transform: rotate(22.63deg);
+}
+.rec2 {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  left: 1149.71px;
+  top: -10px;
+
+  background: #f6cd5b;
+  border-radius: 30px;
+  transform: rotate(22.63deg);
+}
+
+i {
+  color: #ffffff;
 }
