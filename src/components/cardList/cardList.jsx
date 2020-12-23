@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./cardList.scoped.css";
 import Card from "../card/card";
-import ArrowButton from "../arrowButton/arrowButton";
+import RightArrowButton from "../arrowButtons/rightArrowButton";
+import LeftArrowButton from "../arrowButtons/leftArrowButton";
 
 class CardList extends Component {
   render() {
@@ -11,6 +12,10 @@ class CardList extends Component {
       itemsPerPage,
       onIncrement,
       onDecrement,
+      onLeftPress,
+      isSlidingLeft,
+      onRightPress,
+      isSlidingRight,
     } = this.props;
 
     const indexOfLastItem = currentPage * itemsPerPage;
@@ -25,6 +30,10 @@ class CardList extends Component {
           rating={item.rating}
           imgLink={item.imgLink}
           price={item.price}
+          onLeftPress={onLeftPress}
+          isSlidingLeft={isSlidingLeft}
+          onRightPress={onRightPress}
+          isSlidingRight={isSlidingRight}
         />
       );
     });
@@ -33,9 +42,9 @@ class CardList extends Component {
       <div className="container">
         <h1>Menu</h1>
         <div className="grid">
-          <ArrowButton type={"left"} onClick={onDecrement} />
+          <LeftArrowButton onClick={onDecrement} onPress={onLeftPress} />
           <div className="list">{renderItems}</div>
-          <ArrowButton type={"right"} onClick={onIncrement} />
+          <RightArrowButton onClick={onIncrement} onPress={onRightPress} />
         </div>
       </div>
     );

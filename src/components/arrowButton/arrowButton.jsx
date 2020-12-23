@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class ArrowButton extends Component {
   render() {
-    const { type } = this.props;
+    const { type, onClick, onLeftPress, onRightPress } = this.props;
 
     const baseStyle = {
       color: "#d72d1f",
@@ -12,15 +12,27 @@ class ArrowButton extends Component {
       left: "50%",
       transform: "translate(-50%, -50%)",
     };
+
     const containerLeft = {
       height: "768px",
       position: "relative",
       justifySelf: "end",
     };
+
     const containerRight = {
       height: "768px",
       position: "relative",
       justifySelf: "start",
+    };
+
+    const onClickWrapperLeft = () => {
+      onLeftPress(true);
+      onClick();
+    };
+
+    const onClickWrapperRight = () => {
+      onRightPress(true);
+      onClick();
     };
 
     const renderArrow = (type) => {
@@ -28,7 +40,7 @@ class ArrowButton extends Component {
         return (
           <div style={containerRight}>
             <i
-              onClick={this.props.onClick}
+              onClick={onClickWrapperRight}
               className="fas fa-caret-square-right"
               style={baseStyle}
             />
@@ -38,7 +50,7 @@ class ArrowButton extends Component {
         return (
           <div style={containerLeft}>
             <i
-              onClick={this.props.onClick}
+              onClick={onClickWrapperLeft}
               className="fas fa-caret-square-left"
               style={baseStyle}
             />

@@ -10,6 +10,7 @@ h1 {
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.2);
   padding: 1rem;
   position: relative;
+  animation-duration: 0.5s;
 }
 
 .price {
@@ -24,4 +25,34 @@ h1 {
   margin-right: auto;
   margin-left: auto;
   display: block;
+}
+
+.container[left="true"] {
+  animation-name: slideToLeft;
+}
+
+.container[right="true"] {
+  animation-name: slideToRight;
+}
+
+@keyframes slideToRight {
+  from {
+    left: 0px;
+    opacity: 1;
+  }
+  to {
+    left: 100px;
+    opacity: 0;
+  }
+}
+
+@keyframes slideToLeft {
+  from {
+    right: 0px;
+    opacity: 1;
+  }
+  to {
+    right: 100px;
+    opacity: 0;
+  }
 }
