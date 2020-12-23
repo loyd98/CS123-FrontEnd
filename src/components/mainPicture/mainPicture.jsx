@@ -6,15 +6,13 @@ class MainPicture extends Component {
     return (
       <div className="container">
         <div className="mainPicture">
-          <div className="pic">
-            <img
+          <img
               src="https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png"
               alt="burger"
-            />
-          </div>
-          <div className="caption">
+          />
+        </div>
+        <div className="caption">
             <h1> Big Burger </h1>
-          </div>
         </div>
       </div>
     );

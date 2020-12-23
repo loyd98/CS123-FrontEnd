@@ -4,6 +4,7 @@ import { getProducts } from "./services/products";
 import Navbar from "./components/navbar/navbar";
 import MainPicture from "./components/mainPicture/mainPicture";
 import CardList from "./components/cardList/cardList";
+import Footer from "./components/footer/footer";
 
 class App extends Component {
   constructor() {
@@ -65,6 +66,7 @@ class App extends Component {
           onLeftPress={this.handleSlideLeft}
           onRightPress={this.handleSlideRight}
         />
+        <Footer />
       </React.Fragment>
     );
   }
