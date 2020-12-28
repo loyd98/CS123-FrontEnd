@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./navbar.scoped.css";
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
   render() {
@@ -12,16 +13,16 @@ class Navbar extends Component {
             </div>
             <ul className="menu-group">
               <li>
-                <a href="#">Order</a>
+                <Link to="/">Order</Link>
               </li>
               <li>
-                <a href="#">Cart</a>
+                <Link to="/cart">Cart</Link>
               </li>
               <li>
-                <a href="#">Profile</a>
+                <Link>Order</Link>
               </li>
               <li>
-                <a href="#">Log in</a>
+                <Link>Log in</Link>
               </li>
             </ul>
           </div>

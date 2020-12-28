@@ -15,17 +15,17 @@ class Footer extends Component {
           <ul>
             <li>
               <a href="#">
-                <i class="fab fa-facebook-square" />
+                <i className="fab fa-facebook-square" />
               </a>
             </li>
             <li>
               <a href="#">
-                <i class="fab fa-twitter-square" />
+                <i className="fab fa-twitter-square" />
               </a>
             </li>
             <li>
               <a href="#">
-                <i class="fab fa-instagram" />
+                <i className="fab fa-instagram" />
               </a>
             </li>
           </ul>

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import { getProducts } from "./services/products";
 import Navbar from "./components/navbar/navbar";
-import MainPicture from "./components/mainPicture/mainPicture";
-import CardList from "./components/cardList/cardList";
-import Footer from "./components/footer/footer";
+import MainPage from "./components/mainPage/mainPage";
+import CartPage from "./components/cartPage/cartPage";
 
 class App extends Component {
   constructor() {
@@ -26,14 +26,12 @@ class App extends Component {
     if (this.state.currentPage > 1 || !value) {
       this.setState({ isSlidingLeft: value });
     }
-    console.log("left", this.state.isSlidingLeft);
   };
 
   handleSlideRight = (value) => {
     if (this.state.currentPage < this.numberOfPages || !value) {
       this.setState({ isSlidingRight: value });
     }
-    console.log("right", this.state.isSlidingRight);
   };
 
   handleIncrement = () => {
@@ -50,24 +48,39 @@ class App extends Component {
     }
   };
 
+  handleItemClick = (e) => {
+    console.log(e.currentTarget);
+  };
+
   render() {
     return (
-      <React.Fragment>
-        <Navbar />
-        <MainPicture />
-        <CardList
-          items={this.state.items}
-          currentPage={this.state.currentPage}
-          itemsPerPage={this.state.itemsPerPage}
-          isSlidingLeft={this.state.isSlidingLeft}
-          isSlidingRight={this.state.isSlidingRight}
-          onIncrement={this.handleIncrement}
-          onDecrement={this.handleDecrement}
-          onLeftPress={this.handleSlideLeft}
-          onRightPress={this.handleSlideRight}
-        />
-        <Footer />
-      </React.Fragment>
+      <Router>
+        <React.Fragment>
+          <Navbar />
+          <Switch>
+            <Route
+              path="/"
+              exact
+              render={(props) => (
+                <MainPage
+                  {...props}
+                  items={this.state.items}
+                  currentPage={this.state.currentPage}
+                  itemsPerPage={this.state.itemsPerPage}
+                  isSlidingLeft={this.state.isSlidingLeft}
+                  isSlidingRight={this.state.isSlidingRight}
+                  onIncrement={this.handleIncrement}
+                  onDecrement={this.handleDecrement}
+                  onLeftPress={this.handleSlideLeft}
+                  onRightPress={this.handleSlideRight}
+                  onItemClick={this.handleItemClick}
+                />
+              )}
+            />
+            <Route path="/cart" component={CartPage} />
+          </Switch>
+        </React.Fragment>
+      </Router>
     );
   }
 }

@@ -13,6 +13,7 @@ class Card extends Component {
       isSlidingLeft,
       onRightPress,
       isSlidingRight,
+      onItemClick,
     } = this.props;
 
     const animationEndWrapper = () => {
@@ -24,6 +25,7 @@ class Card extends Component {
       <div
         className="container"
         onAnimationEnd={animationEndWrapper}
+        onClick={(e) => onItemClick(e)}
         left={isSlidingLeft.toString()}
         right={isSlidingRight.toString()}
       >

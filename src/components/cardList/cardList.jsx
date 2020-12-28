@@ -16,6 +16,7 @@ class CardList extends Component {
       isSlidingLeft,
       onRightPress,
       isSlidingRight,
+      onItemClick,
     } = this.props;
 
     const indexOfLastItem = currentPage * itemsPerPage;
@@ -34,6 +35,7 @@ class CardList extends Component {
           isSlidingLeft={isSlidingLeft}
           onRightPress={onRightPress}
           isSlidingRight={isSlidingRight}
+          onItemClick={onItemClick}
         />
       );
     });
