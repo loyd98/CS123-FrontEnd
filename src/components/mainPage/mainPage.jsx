@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import MainPicture from "../mainPicture/mainPicture";
 import CardList from "../cardList/cardList";
-import Footer from "../footer/footer";
 
 class MainPage extends Component {
   render() {
@@ -15,7 +14,7 @@ class MainPage extends Component {
       onDecrement,
       onLeftPress,
       onRightPress,
-      onItemClick,
+      handleModalVisibility,
     } = this.props;
 
     return (
@@ -31,9 +30,8 @@ class MainPage extends Component {
           onDecrement={onDecrement}
           onLeftPress={onLeftPress}
           onRightPress={onRightPress}
-          onItemClick={onItemClick}
+          handleModalVisibility={handleModalVisibility}
         />
-        <Footer />
       </React.Fragment>
     );
   }

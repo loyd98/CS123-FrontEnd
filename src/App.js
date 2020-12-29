@@ -5,6 +5,8 @@ import { getProducts } from "./services/products";
 import Navbar from "./components/navbar/navbar";
 import MainPage from "./components/mainPage/mainPage";
 import CartPage from "./components/cartPage/cartPage";
+import Footer from "./components/footer/footer";
+import ItemModal from "./components/itemModal/itemModal";
 
 class App extends Component {
   constructor() {
@@ -20,6 +22,8 @@ class App extends Component {
     itemsPerPage: 8,
     isSlidingLeft: false,
     isSlidingRight: false,
+    isModalVisible: false,
+    currentItem: {},
   };
 
   handleSlideLeft = (value) => {
@@ -48,8 +52,8 @@ class App extends Component {
     }
   };
 
-  handleItemClick = (e) => {
-    console.log(e.currentTarget);
+  handleModalVisibility = (e, value, data) => {
+    this.setState({ isModalVisible: value, currentItem: data });
   };
 
   render() {
@@ -57,6 +61,12 @@ class App extends Component {
       <Router>
         <React.Fragment>
           <Navbar />
+          <ItemModal
+            item={null}
+            currentItem={this.state.currentItem}
+            isModalVisible={this.state.isModalVisible}
+            handleModalVisibility={this.handleModalVisibility}
+          />
           <Switch>
             <Route
               path="/"
@@ -73,12 +83,13 @@ class App extends Component {
                   onDecrement={this.handleDecrement}
                   onLeftPress={this.handleSlideLeft}
                   onRightPress={this.handleSlideRight}
-                  onItemClick={this.handleItemClick}
+                  handleModalVisibility={this.handleModalVisibility}
                 />
               )}
             />
             <Route path="/cart" component={CartPage} />
           </Switch>
+          <Footer />
         </React.Fragment>
       </Router>
     );

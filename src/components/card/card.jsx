@@ -5,15 +5,12 @@ import Rating from "../ratings/ratings.jsx";
 class Card extends Component {
   render() {
     const {
-      itemName,
-      price,
-      imgLink,
-      rating,
+      item,
       onLeftPress,
       isSlidingLeft,
       onRightPress,
       isSlidingRight,
-      onItemClick,
+      handleModalVisibility,
     } = this.props;
 
     const animationEndWrapper = () => {
@@ -25,14 +22,14 @@ class Card extends Component {
       <div
         className="container"
         onAnimationEnd={animationEndWrapper}
-        onClick={(e) => onItemClick(e)}
+        onClick={(e) => handleModalVisibility(e, true, item)}
         left={isSlidingLeft.toString()}
         right={isSlidingRight.toString()}
       >
-        <h1>{itemName}</h1>
-        <img src={imgLink} className="image" alt="Food Item" />
-        <h1 className="price">{`P${price}`}</h1>
-        <Rating rating={rating} />
+        <h1>{item.name}</h1>
+        <img src={item.imgLink} className="image" alt="Food Item" />
+        <h1 className="price">{`P${item.price}`}</h1>
+        <Rating rating={item.rating} top="14.5rem" left="1.2rem" size="1rem" />
       </div>
     );
   }

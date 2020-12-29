@@ -16,7 +16,7 @@ class CardList extends Component {
       isSlidingLeft,
       onRightPress,
       isSlidingRight,
-      onItemClick,
+      handleModalVisibility,
     } = this.props;
 
     const indexOfLastItem = currentPage * itemsPerPage;
@@ -27,15 +27,12 @@ class CardList extends Component {
       return (
         <Card
           key={item._id}
-          itemName={item.name}
-          rating={item.rating}
-          imgLink={item.imgLink}
-          price={item.price}
+          item={item}
           onLeftPress={onLeftPress}
           isSlidingLeft={isSlidingLeft}
           onRightPress={onRightPress}
           isSlidingRight={isSlidingRight}
-          onItemClick={onItemClick}
+          handleModalVisibility={handleModalVisibility}
         />
       );
     });

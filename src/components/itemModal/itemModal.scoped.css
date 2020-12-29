@@ -1,0 +1,62 @@
+.container {
+  background: #ffffff;
+  width: 800px;
+  height: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  border-radius: 30px;
+  box-shadow: 0px 39px 18px 6px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+}
+
+h1 {
+  color: #514444;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+.exit {
+  color: #514444;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+}
+
+.not-visible {
+  display: none;
+}
+
+.foodPriceContainer {
+  width: 300px;
+  margin-top: 3rem;
+}
+
+.image {
+  top: 120px;
+  width: 300px;
+}
+
+.price {
+  background: #f6cd5b;
+  text-align: center;
+  margin: 0 auto;
+  width: 200px;
+  border-radius: 20px;
+}
+
+p {
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #514444;
+}
+
+.description {
+  width: 400px;
+  position: absolute;
+  right: 50px;
+  top: 80px;
+}

@@ -19,7 +19,7 @@ class Navbar extends Component {
                 <Link to="/cart">Cart</Link>
               </li>
               <li>
-                <Link>Order</Link>
+                <Link>Profile</Link>
               </li>
               <li>
                 <Link>Log in</Link>

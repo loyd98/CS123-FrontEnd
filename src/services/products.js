@@ -5,7 +5,9 @@ const products = [
     rating: 5,
     imgLink:
       "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
-    price: 75.0,
+    price: 75.99,
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque feugiat nunc lorem, sed dignissim lorem interdum vel.",
   },
   {
     _id: 2,
