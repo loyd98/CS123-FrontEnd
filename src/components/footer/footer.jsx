@@ -14,17 +14,17 @@ class Footer extends Component {
           <h1>Follow us on</h1>
           <ul>
             <li>
-              <a href="#">
+              <a href="https://www.facebook.com">
                 <i className="fab fa-facebook-square" />
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="https://www.twitter.com">
                 <i className="fab fa-twitter-square" />
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="https://www.instagram.com">
                 <i className="fab fa-instagram" />
               </a>
             </li>

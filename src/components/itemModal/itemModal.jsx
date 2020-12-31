@@ -1,10 +1,30 @@
 import React, { Component } from "react";
 import "./itemModal.scoped.css";
 import Ratings from "../ratings/ratings";
+import Button from "../button/button";
 
 class ItemModal extends Component {
+  state = {
+    count: 1,
+  };
+
+  increment = () => {
+    if (this.state.count < 100) this.setState({ count: this.state.count + 1 });
+  };
+
+  decrement = () => {
+    if (this.state.count > 1) {
+      this.setState({ count: this.state.count - 1 });
+    }
+  };
+
   render() {
-    const { currentItem, isModalVisible, handleModalVisibility } = this.props;
+    const {
+      currentItem,
+      isModalVisible,
+      handleModalVisibility,
+      handleAddToCart,
+    } = this.props;
 
     const toggleVisibility = (value) => {
       if (!value) {
@@ -35,6 +55,19 @@ class ItemModal extends Component {
         </div>
         <div className="description">
           <p>{currentItem.description}</p>
+          <div className="description_buttons">
+            <div className="quantity">
+              <i className="fas fa-minus" onClick={this.decrement} />
+              <div className="counter">
+                <h1>{this.state.count}</h1>
+              </div>
+              <i className="fas fa-plus" onClick={this.increment} />
+            </div>
+            <Button
+              title="Add to Cart"
+              onClick={() => handleAddToCart(currentItem, this.state.count)}
+            />
+          </div>
         </div>
       </div>
     );

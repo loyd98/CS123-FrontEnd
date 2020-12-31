@@ -24,6 +24,7 @@ class App extends Component {
     isSlidingRight: false,
     isModalVisible: false,
     currentItem: {},
+    cart: [],
   };
 
   handleSlideLeft = (value) => {
@@ -56,6 +57,19 @@ class App extends Component {
     this.setState({ isModalVisible: value, currentItem: data });
   };
 
+  handleAddToCart = (order, quantity) => {
+    const { cart } = this.state;
+    const clone = { ...order };
+    if (cart.length === 0) {
+      clone._id = 0;
+    } else {
+      clone._id = cart.slice(-1)[0]._id + 1;
+    }
+
+    clone.quantity = quantity;
+    this.setState({ cart: [...cart, clone] });
+  };
+
   render() {
     return (
       <Router>
@@ -66,6 +80,7 @@ class App extends Component {
             currentItem={this.state.currentItem}
             isModalVisible={this.state.isModalVisible}
             handleModalVisibility={this.handleModalVisibility}
+            handleAddToCart={this.handleAddToCart}
           />
           <Switch>
             <Route
@@ -87,7 +102,10 @@ class App extends Component {
                 />
               )}
             />
-            <Route path="/cart" component={CartPage} />
+            <Route
+              path="/cart"
+              render={(props) => <CartPage cart={this.state.cart} />}
+            />
           </Switch>
           <Footer />
         </React.Fragment>

@@ -16,6 +16,7 @@ class RightArrowButton extends Component {
       top: "35%",
       left: "50%",
       transform: "translate(-50%, -50%)",
+      cursor: "pointer",
     };
 
     const container = {
