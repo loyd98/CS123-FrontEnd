@@ -28,7 +28,7 @@ class Card extends Component {
       >
         <h1>{item.name}</h1>
         <img src={item.imgLink} className="image" alt="Food Item" />
-        <h1 className="price">{`P${item.price}`}</h1>
+        <h1 className="price">{`P${item.price.toFixed(2)}`}</h1>
         <Rating rating={item.rating} top="14.5rem" left="1.2rem" size="1rem" />
       </div>
     );

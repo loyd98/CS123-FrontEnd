@@ -34,6 +34,10 @@ class ItemModal extends Component {
       }
     };
 
+    const resetCount = () => {
+      this.setState({ count: 1 });
+    };
+
     return (
       <div className={toggleVisibility(isModalVisible)}>
         <h1>{currentItem.name}</h1>
@@ -44,7 +48,10 @@ class ItemModal extends Component {
           rating={currentItem.rating}
         />
         <i
-          onClick={(e) => handleModalVisibility(e, false, {})}
+          onClick={(e) => {
+            handleModalVisibility(e, false, {});
+            resetCount();
+          }}
           className="far fa-times-circle exit"
         />
         <div className="foodPriceContainer">
@@ -65,7 +72,11 @@ class ItemModal extends Component {
             </div>
             <Button
               title="Add to Cart"
-              onClick={() => handleAddToCart(currentItem, this.state.count)}
+              onClick={(e) => {
+                handleAddToCart(currentItem, this.state.count);
+                handleModalVisibility(e, false, {});
+                resetCount();
+              }}
             />
           </div>
         </div>

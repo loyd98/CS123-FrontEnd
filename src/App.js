@@ -70,6 +70,39 @@ class App extends Component {
     this.setState({ cart: [...cart, clone] });
   };
 
+  handleCloseCartItem = (e) => {
+    const id = Number(e.target.dataset.remove);
+
+    const newCart = this.state.cart.filter((item) => {
+      return item._id !== id;
+    });
+    console.log(newCart);
+
+    this.setState({ cart: newCart });
+  };
+
+  getSubTotal = () => {
+    let subtotal = 0;
+
+    if (this.state.cart.length > 0) {
+      this.state.cart.forEach((item) => {
+        subtotal += item.price * item.quantity;
+      });
+    }
+
+    return [subtotal.toFixed(2), subtotal];
+  };
+
+  getVAT = () => {
+    const vat = this.getSubTotal()[1] * 0.2;
+    return [vat.toFixed(2), vat];
+  };
+
+  getTotal = () => {
+    const total = this.getSubTotal()[1] + this.getVAT()[1];
+    return total.toFixed(2);
+  };
+
   render() {
     return (
       <Router>
@@ -104,7 +137,15 @@ class App extends Component {
             />
             <Route
               path="/cart"
-              render={(props) => <CartPage cart={this.state.cart} />}
+              render={(props) => (
+                <CartPage
+                  cart={this.state.cart}
+                  subtotal={this.getSubTotal()[0]}
+                  vat={this.getVAT()[0]}
+                  total={this.getTotal()}
+                  handleCloseCartItem={this.handleCloseCartItem}
+                />
+              )}
             />
           </Switch>
           <Footer />

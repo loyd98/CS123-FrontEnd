@@ -6,7 +6,7 @@ import CartItem from "../cartItem/cartItem";
 
 class CartPage extends Component {
   render() {
-    const { cart } = this.props;
+    const { cart, total, subtotal, vat, handleCloseCartItem } = this.props;
 
     return (
       <React.Fragment>
@@ -21,7 +21,11 @@ class CartPage extends Component {
               </div>
               <div className="card-container">
                 {cart.map((order) => (
-                  <CartItem key={order._id} order={order} />
+                  <CartItem
+                    key={order._id}
+                    order={order}
+                    handleCloseCartItem={handleCloseCartItem}
+                  />
                 ))}
               </div>
             </div>
@@ -30,17 +34,17 @@ class CartPage extends Component {
               <div className="summary-sub">
                 <span>
                   <p>Sub-Total</p>
-                  <p>{100}</p>
+                  <p>{subtotal}</p>
                 </span>
                 <span>
                   <p>VAT</p>
-                  <p>{100}</p>
+                  <p>{vat}</p>
                 </span>
               </div>
               <div className="summary-total">
                 <span>
                   <p>Total</p>
-                  <h1>{`P${120}`}</h1>
+                  <h1>{`P${total}`}</h1>
                 </span>
               </div>
               <div className="button">

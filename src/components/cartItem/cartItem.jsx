@@ -3,7 +3,7 @@ import "./cartItem.scoped.css";
 
 class CardList extends Component {
   render() {
-    const { order } = this.props;
+    const { order, handleCloseCartItem } = this.props;
 
     return (
       <div className="container">
@@ -17,7 +17,11 @@ class CardList extends Component {
             <h2>{order.quantity}</h2>
             <h2>{`P${order.price}`}</h2>
           </span>
-          <i className="fas fa-times-circle exit" />
+          <i
+            onClick={(e) => handleCloseCartItem(e)}
+            data-remove={order._id}
+            className="fas fa-times-circle exit"
+          />
         </div>
       </div>
     );
