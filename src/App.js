@@ -5,6 +5,7 @@ import { getProducts } from "./services/products";
 import Navbar from "./components/navbar/navbar";
 import MainPage from "./components/mainPage/mainPage";
 import CartPage from "./components/cartPage/cartPage";
+import LoginPage from "./components/loginPage/loginPage";
 import Footer from "./components/footer/footer";
 import ItemModal from "./components/itemModal/itemModal";
 
@@ -25,6 +26,8 @@ class App extends Component {
     isModalVisible: false,
     currentItem: {},
     cart: [],
+    email: "Email",
+    password: "Password",
   };
 
   handleSlideLeft = (value) => {
@@ -103,6 +106,22 @@ class App extends Component {
     return total.toFixed(2);
   };
 
+  handleEmailChange = (e) => {
+    this.setState({ email: e.target.value });
+  };
+
+  handlePasswordChange = (e) => {
+    this.setState({ password: e.target.value });
+  };
+
+  handleEmailClick = () => {
+    if (this.state.email === "Email") this.setState({ email: "" });
+  };
+
+  handlePasswordClick = () => {
+    if (this.state.password === "Password") this.setState({ password: "" });
+  };
+
   render() {
     return (
       <Router>
@@ -119,9 +138,8 @@ class App extends Component {
             <Route
               path="/"
               exact
-              render={(props) => (
+              render={() => (
                 <MainPage
-                  {...props}
                   items={this.state.items}
                   currentPage={this.state.currentPage}
                   itemsPerPage={this.state.itemsPerPage}
@@ -137,13 +155,26 @@ class App extends Component {
             />
             <Route
               path="/cart"
-              render={(props) => (
+              render={() => (
                 <CartPage
                   cart={this.state.cart}
                   subtotal={this.getSubTotal()[0]}
                   vat={this.getVAT()[0]}
                   total={this.getTotal()}
                   handleCloseCartItem={this.handleCloseCartItem}
+                />
+              )}
+            />
+            <Route
+              path="/login"
+              render={() => (
+                <LoginPage
+                  email={this.state.email}
+                  onEmailChange={this.handleEmailChange}
+                  onPasswordChange={this.handlePasswordChange}
+                  onEmailClick={this.handleEmailClick}
+                  onPasswordClick={this.handlePasswordClick}
+                  password={this.state.password}
                 />
               )}
             />

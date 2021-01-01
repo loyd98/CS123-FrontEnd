@@ -19,10 +19,10 @@ class Navbar extends Component {
                 <Link to="/cart">Cart</Link>
               </li>
               <li>
-                <Link>Profile</Link>
+                <Link to="/profile">Profile</Link>
               </li>
               <li>
-                <Link>Log in</Link>
+                <Link to="/login">Log in</Link>
               </li>
             </ul>
           </div>
