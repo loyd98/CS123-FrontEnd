@@ -9,6 +9,7 @@ import ProfilePage from "./components/profilePage/profilePage";
 import LoginPage from "./components/loginPage/loginPage";
 import Footer from "./components/footer/footer";
 import ItemModal from "./components/itemModal/itemModal";
+import SignUp from "./components/signupPage/signupPage";
 
 class App extends Component {
   constructor() {
@@ -226,6 +227,7 @@ class App extends Component {
                 />
               )}
             />
+            <Route path="/signup" render={() => <SignUp />} />
           </Switch>
           <Footer />
         </React.Fragment>
