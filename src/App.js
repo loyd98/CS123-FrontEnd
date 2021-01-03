@@ -5,9 +5,11 @@ import { getProducts } from "./services/products";
 import Navbar from "./components/navbar/navbar";
 import MainPage from "./components/mainPage/mainPage";
 import CartPage from "./components/cartPage/cartPage";
+import ProfilePage from "./components/profilePage/profilePage";
 import LoginPage from "./components/loginPage/loginPage";
 import Footer from "./components/footer/footer";
 import ItemModal from "./components/itemModal/itemModal";
+import SignUp from "./components/signupPage/signupPage";
 
 class App extends Component {
   constructor() {
@@ -26,8 +28,30 @@ class App extends Component {
     isModalVisible: false,
     currentItem: {},
     cart: [],
-    email: "Email",
-    password: "Password",
+    isEditing: false,
+    currentAccount: {
+      _id: null,
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      address: "",
+      email: "Email",
+      password: "Password",
+    },
+    accounts: [
+      {
+        _id: 0,
+        firstName: "John",
+        lastName: "Doe",
+        email: "john.doe@gmail.com",
+        phone: "09176661234",
+        address:
+          "17/F Citibank Centre Building, Paseo De Roxas Avenue, Salcedo Village, Makati City, Metro Manila, Philippines",
+        email: "Email",
+        password: "Password",
+      },
+    ],
   };
 
   handleSlideLeft = (value) => {
@@ -107,19 +131,35 @@ class App extends Component {
   };
 
   handleEmailChange = (e) => {
-    this.setState({ email: e.target.value });
+    const login = { ...this.state.currentAccount };
+    login.email = e.target.value;
+
+    this.setState({ currentAccount: login });
   };
 
   handlePasswordChange = (e) => {
-    this.setState({ password: e.target.value });
+    const login = { ...this.state.currentAccount };
+    login.password = e.target.value;
+
+    this.setState({ currentAccount: login });
   };
 
   handleEmailClick = () => {
-    if (this.state.email === "Email") this.setState({ email: "" });
+    const login = { ...this.state.currentAccount };
+    login.email = "";
+
+    this.setState({ currentAccount: login });
   };
 
   handlePasswordClick = () => {
-    if (this.state.password === "Password") this.setState({ password: "" });
+    const login = { ...this.state.currentAccount };
+    login.password = "";
+
+    this.setState({ currentAccount: login });
+  };
+
+  handleEditing = () => {
+    this.setState({ isEditing: true });
   };
 
   render() {
@@ -166,18 +206,28 @@ class App extends Component {
               )}
             />
             <Route
+              path="/profile"
+              render={() => (
+                <ProfilePage
+                  currentAccount={this.state.currentAccount}
+                  isEditing={this.state.isEditing}
+                  handleEditing={this.handleEditing}
+                />
+              )}
+            />
+            <Route
               path="/login"
               render={() => (
                 <LoginPage
-                  email={this.state.email}
+                  currentAccount={this.state.currentAccount}
                   onEmailChange={this.handleEmailChange}
                   onPasswordChange={this.handlePasswordChange}
                   onEmailClick={this.handleEmailClick}
                   onPasswordClick={this.handlePasswordClick}
-                  password={this.state.password}
                 />
               )}
             />
+            <Route path="/signup" render={() => <SignUp />} />
           </Switch>
           <Footer />
         </React.Fragment>

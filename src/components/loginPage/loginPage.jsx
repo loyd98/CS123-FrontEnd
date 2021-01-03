@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 class Login extends Component {
   render() {
     const {
-      email,
-      password,
+      currentAccount,
       onEmailChange,
       onPasswordChange,
       onEmailClick,
@@ -24,21 +23,27 @@ class Login extends Component {
           <form>
             <input
               type="text"
-              value={email}
+              value={currentAccount.email}
               onChange={onEmailChange}
               onClick={onEmailClick}
+              disabled={currentAccount._id === null ? false : true}
             />
             <input
-              type="text"
-              value={password}
+              type={
+                currentAccount.password === "Password" ? "text" : "password"
+              }
+              value={currentAccount.password}
               onChange={onPasswordChange}
               onClick={onPasswordClick}
+              disabled={currentAccount._id === null ? false : true}
             />
           </form>
           <div className="button">
             <Button
               title="Log in"
-              onClick={() => console.log(email, password)}
+              onClick={() =>
+                console.log(currentAccount.email, currentAccount.password)
+              }
             />
           </div>
           <span>
