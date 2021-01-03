@@ -11,7 +11,7 @@ class CardList extends Component {
           <span>
             <div>
               <h1>{order.name}</h1>
-              <img src={order.imgLink} />
+              <img src={order.imgLink} alt="item" />
             </div>
 
             <h2>{order.quantity}</h2>
