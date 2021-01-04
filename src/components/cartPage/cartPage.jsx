@@ -6,7 +6,15 @@ import CartItem from "../cartItem/cartItem";
 
 class CartPage extends Component {
   render() {
-    const { cart, total, subtotal, vat, handleCloseCartItem } = this.props;
+    const {
+      cart,
+      total,
+      subtotal,
+      vat,
+      handleCloseCartItem,
+      handleAlert,
+      currentAccount,
+    } = this.props;
 
     return (
       <React.Fragment>
@@ -47,7 +55,14 @@ class CartPage extends Component {
                   <h1>{`P${total}`}</h1>
                 </span>
               </div>
-              <div className="button">
+              <div
+                className="button"
+                onClick={() => {
+                  if (currentAccount._id === null) {
+                    handleAlert(true);
+                  }
+                }}
+              >
                 <Button title="Checkout" />
               </div>
             </div>

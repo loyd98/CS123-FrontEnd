@@ -10,6 +10,7 @@ import LoginPage from "./components/loginPage/loginPage";
 import Footer from "./components/footer/footer";
 import ItemModal from "./components/itemModal/itemModal";
 import SignUp from "./components/signupPage/signupPage";
+import Alert from "./components/alert/alert";
 
 class App extends Component {
   constructor() {
@@ -29,6 +30,7 @@ class App extends Component {
     currentItem: {},
     cart: [],
     isEditing: false,
+    showAlert: false,
     currentAccount: {
       _id: null,
       firstName: "",
@@ -162,17 +164,28 @@ class App extends Component {
     this.setState({ isEditing: true });
   };
 
+  handleAlert = (value) => {
+    this.setState({ showAlert: value });
+  };
+
   render() {
     return (
       <Router>
         <React.Fragment>
           <Navbar />
+          <Alert
+            message="Please log in to continue."
+            trigger={this.state.showAlert}
+            onClick={this.handleAlert}
+          />
           <ItemModal
             item={null}
             currentItem={this.state.currentItem}
             isModalVisible={this.state.isModalVisible}
             handleModalVisibility={this.handleModalVisibility}
             handleAddToCart={this.handleAddToCart}
+            handleAlert={this.handleAlert}
+            currentAccount={this.state.currentAccount}
           />
           <Switch>
             <Route
@@ -202,6 +215,8 @@ class App extends Component {
                   vat={this.getVAT()[0]}
                   total={this.getTotal()}
                   handleCloseCartItem={this.handleCloseCartItem}
+                  handleAlert={this.handleAlert}
+                  currentAccount={this.state.currentAccount}
                 />
               )}
             />
@@ -212,6 +227,7 @@ class App extends Component {
                   currentAccount={this.state.currentAccount}
                   isEditing={this.state.isEditing}
                   handleEditing={this.handleEditing}
+                  handleAlert={this.handleAlert}
                 />
               )}
             />
