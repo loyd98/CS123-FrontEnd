@@ -4,7 +4,12 @@ import Button from "../button/button";
 
 class ProfilePage extends Component {
   render() {
-    const { currentAccount, isEditing, handleEditing } = this.props;
+    const {
+      currentAccount,
+      isEditing,
+      handleEditing,
+      handleAlert,
+    } = this.props;
 
     return (
       <div className="container">
@@ -31,7 +36,16 @@ class ProfilePage extends Component {
             <textarea disabled={!isEditing} />
           </div>
           {/* todo: Handle saving the edited profile. */}
-          <div className="button" onClick={handleEditing}>
+          <div
+            className="button"
+            onClick={() => {
+              if (currentAccount._id === null) {
+                handleAlert(true);
+              } else {
+                handleEditing();
+              }
+            }}
+          >
             <Button title={!isEditing ? "Edit" : "Save"} />
           </div>
         </form>

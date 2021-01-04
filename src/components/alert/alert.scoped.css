@@ -1,0 +1,25 @@
+.container {
+  z-index: 3;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 450px;
+  background: #f6cd5b;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+i {
+  font-size: 50px;
+}
+
+.button {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.message {
+  padding: 20px;
+}

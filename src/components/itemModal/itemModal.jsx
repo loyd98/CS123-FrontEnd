@@ -24,6 +24,8 @@ class ItemModal extends Component {
       isModalVisible,
       handleModalVisibility,
       handleAddToCart,
+      handleAlert,
+      currentAccount,
     } = this.props;
 
     const toggleVisibility = (value) => {
@@ -73,9 +75,13 @@ class ItemModal extends Component {
             <Button
               title="Add to Cart"
               onClick={(e) => {
-                handleAddToCart(currentItem, this.state.count);
-                handleModalVisibility(e, false, {});
-                resetCount();
+                if (currentAccount._id === null) {
+                  handleAlert(true);
+                } else {
+                  handleAddToCart(currentItem, this.state.count);
+                  handleModalVisibility(e, false, {});
+                  resetCount();
+                }
               }}
             />
           </div>
