@@ -38,7 +38,6 @@ class App extends Component {
       email: "",
       phone: "",
       address: "",
-      email: "Email",
       password: "Password",
     },
     accounts: [
@@ -50,7 +49,6 @@ class App extends Component {
         phone: "09176661234",
         address:
           "17/F Citibank Centre Building, Paseo De Roxas Avenue, Salcedo Village, Makati City, Metro Manila, Philippines",
-        email: "Email",
         password: "Password",
       },
     ],
@@ -236,10 +234,6 @@ class App extends Component {
               render={() => (
                 <LoginPage
                   currentAccount={this.state.currentAccount}
-                  onEmailChange={this.handleEmailChange}
-                  onPasswordChange={this.handlePasswordChange}
-                  onEmailClick={this.handleEmailClick}
-                  onPasswordClick={this.handlePasswordClick}
                 />
               )}
             />
