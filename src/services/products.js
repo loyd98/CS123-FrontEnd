@@ -1,3 +1,10 @@
+import axios from 'axios';
+
+
+const products2 = axios.get('http://localhost:1337/food').then(response => {
+  console.log(response);
+});
+
 const products = [
   {
     _id: 1,

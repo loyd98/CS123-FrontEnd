@@ -11,13 +11,17 @@ import Footer from "./components/footer/footer";
 import ItemModal from "./components/itemModal/itemModal";
 import SignUp from "./components/signupPage/signupPage";
 import Alert from "./components/alert/alert";
+import axios from 'axios';
 
 class App extends Component {
   constructor() {
     super();
     this.numberOfPages = Math.ceil(
-      this.state.items.length / this.state.itemsPerPage
+      this.state.foodItems.length / this.state.itemsPerPage
     );
+    // this.getFood = this.getFood.bind(this)
+    // this.getFood()
+
   }
 
   state = {
@@ -31,6 +35,7 @@ class App extends Component {
     cart: [],
     isEditing: false,
     showAlert: false,
+    foodItems: [],
     currentAccount: {
       _id: null,
       firstName: "",
@@ -56,6 +61,19 @@ class App extends Component {
     ],
   };
 
+  componentDidMount() {
+    axios.get('http://localhost:1337/menus').then(response => {
+      this.setState({ foodItems: response.data })
+      console.log('response', response.data)
+    });
+  };
+
+  getFood = () => {
+    axios.get('http://localhost:1337/food').then(response => {
+      this.setState({ foodItems: response.data })
+      console.log('response', response.data)
+    });
+  };
   handleSlideLeft = (value) => {
     if (this.state.currentPage > 1 || !value) {
       this.setState({ isSlidingLeft: value });
@@ -193,7 +211,7 @@ class App extends Component {
               exact
               render={() => (
                 <MainPage
-                  items={this.state.items}
+                  items={this.state.foodItems}
                   currentPage={this.state.currentPage}
                   itemsPerPage={this.state.itemsPerPage}
                   isSlidingLeft={this.state.isSlidingLeft}
