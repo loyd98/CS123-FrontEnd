@@ -26,7 +26,7 @@ class CardList extends Component {
     const renderItems = currentItems.map((item) => {
       return (
         <Card
-          key={item._id}
+          key={item.id}
           item={item}
           onLeftPress={onLeftPress}
           isSlidingLeft={isSlidingLeft}

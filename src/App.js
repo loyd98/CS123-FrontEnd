@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import { getProducts } from "./services/products";
+// import { getProducts } from "./services/products";
 import Navbar from "./components/navbar/navbar";
 import MainPage from "./components/mainPage/mainPage";
 import CartPage from "./components/cartPage/cartPage";
@@ -11,7 +11,7 @@ import Footer from "./components/footer/footer";
 import ItemModal from "./components/itemModal/itemModal";
 import SignUp from "./components/signupPage/signupPage";
 import Alert from "./components/alert/alert";
-import axios from 'axios';
+import axios from "axios";
 
 class App extends Component {
   constructor() {
@@ -19,7 +19,6 @@ class App extends Component {
     this.numberOfPages = Math.ceil(
       this.state.items.length / this.state.itemsPerPage
     );
-
   }
 
   state = {
@@ -59,14 +58,12 @@ class App extends Component {
     ],
   };
 
-
-
   componentDidMount() {
-    axios.get('http://localhost:1337/menus').then(response => {
-      this.setState({ items: response.data })
-      console.log('response', response.data)
+    axios.get("http://localhost:1337/menus").then((response) => {
+      this.setState({ items: response.data });
+      console.log("response", response.data);
     });
-  };
+  }
 
   handleSlideLeft = (value) => {
     if (this.state.currentPage > 1 || !value) {
@@ -190,15 +187,17 @@ class App extends Component {
             trigger={this.state.showAlert}
             onClick={this.handleAlert}
           />
-          <ItemModal
-            item={null}
-            currentItem={this.state.currentItem}
-            isModalVisible={this.state.isModalVisible}
-            handleModalVisibility={this.handleModalVisibility}
-            handleAddToCart={this.handleAddToCart}
-            handleAlert={this.handleAlert}
-            currentAccount={this.state.currentAccount}
-          />
+          {Object.keys(this.state.currentItem).length !== 0 ? (
+            <ItemModal
+              item={null}
+              currentItem={this.state.currentItem}
+              isModalVisible={this.state.isModalVisible}
+              handleModalVisibility={this.handleModalVisibility}
+              handleAddToCart={this.handleAddToCart}
+              handleAlert={this.handleAlert}
+              currentAccount={this.state.currentAccount}
+            />
+          ) : null}
           <Switch>
             <Route
               path="/"

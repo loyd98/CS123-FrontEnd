@@ -18,9 +18,9 @@ class ItemModal extends Component {
     }
   };
 
-  componentDidMount = () => {
-    console.log('currentItem', this.props.currentItem)
-  }
+  // componentDidMount = () => {
+  //   console.log("currentItem", this.props.currentItem);
+  // };
 
   render() {
     const {
@@ -39,7 +39,6 @@ class ItemModal extends Component {
         return "container";
       }
     };
-
 
     const resetCount = () => {
       this.setState({ count: 1 });
@@ -62,7 +61,11 @@ class ItemModal extends Component {
           className="far fa-times-circle exit"
         />
         <div className="foodPriceContainer">
-          {/* <img src={"http://localhost:1337" + currentItem.Image.url} className="image" alt="Food Item" /> */}
+          <img
+            src={"http://localhost:1337" + currentItem.Image.url}
+            className="image"
+            alt="Food Item"
+          />
           <div className="price">
             <h1>{`P${currentItem.Price}`}</h1>
           </div>
