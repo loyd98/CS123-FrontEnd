@@ -18,6 +18,10 @@ class ItemModal extends Component {
     }
   };
 
+  componentDidMount = () => {
+    console.log('currentItem', this.props.currentItem)
+  }
+
   render() {
     const {
       currentItem,
@@ -36,18 +40,19 @@ class ItemModal extends Component {
       }
     };
 
+
     const resetCount = () => {
       this.setState({ count: 1 });
     };
 
     return (
       <div className={toggleVisibility(isModalVisible)}>
-        <h1>{currentItem.name}</h1>
+        <h1>{currentItem.Name}</h1>
         <Ratings
           top={null}
           left="1.6rem"
           size="2.5rem"
-          rating={currentItem.rating}
+          rating={currentItem.Rating}
         />
         <i
           onClick={(e) => {
@@ -57,13 +62,13 @@ class ItemModal extends Component {
           className="far fa-times-circle exit"
         />
         <div className="foodPriceContainer">
-          <img src={currentItem.imgLink} className="image" alt="Food Item" />
+          {/* <img src={"http://localhost:1337" + currentItem.Image.url} className="image" alt="Food Item" /> */}
           <div className="price">
-            <h1>{`P${currentItem.price}`}</h1>
+            <h1>{`P${currentItem.Price}`}</h1>
           </div>
         </div>
         <div className="description">
-          <p>{currentItem.description}</p>
+          <p>{currentItem.Description}</p>
           <div className="description_buttons">
             <div className="quantity">
               <i className="fas fa-minus" onClick={this.decrement} />

@@ -17,15 +17,13 @@ class App extends Component {
   constructor() {
     super();
     this.numberOfPages = Math.ceil(
-      this.state.foodItems.length / this.state.itemsPerPage
+      this.state.items.length / this.state.itemsPerPage
     );
-    // this.getFood = this.getFood.bind(this)
-    // this.getFood()
 
   }
 
   state = {
-    items: getProducts(),
+    items: [],
     currentPage: 1,
     itemsPerPage: 8,
     isSlidingLeft: false,
@@ -61,19 +59,15 @@ class App extends Component {
     ],
   };
 
+
+
   componentDidMount() {
     axios.get('http://localhost:1337/menus').then(response => {
-      this.setState({ foodItems: response.data })
+      this.setState({ items: response.data })
       console.log('response', response.data)
     });
   };
 
-  getFood = () => {
-    axios.get('http://localhost:1337/food').then(response => {
-      this.setState({ foodItems: response.data })
-      console.log('response', response.data)
-    });
-  };
   handleSlideLeft = (value) => {
     if (this.state.currentPage > 1 || !value) {
       this.setState({ isSlidingLeft: value });
@@ -211,7 +205,7 @@ class App extends Component {
               exact
               render={() => (
                 <MainPage
-                  items={this.state.foodItems}
+                  items={this.state.items}
                   currentPage={this.state.currentPage}
                   itemsPerPage={this.state.itemsPerPage}
                   isSlidingLeft={this.state.isSlidingLeft}

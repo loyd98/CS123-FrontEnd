@@ -22,10 +22,12 @@ h1 {
 }
 
 .image {
-  width: 12rem;
+  max-width: 12rem;
+  max-height: 6rem;
   margin-right: auto;
   margin-left: auto;
   display: block;
+
 }
 
 .container[left="true"] {
