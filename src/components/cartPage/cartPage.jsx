@@ -16,6 +16,8 @@ class CartPage extends Component {
       currentAccount,
     } = this.props;
 
+    console.log(cart)
+
     return (
       <React.Fragment>
         <div className="container">
@@ -30,7 +32,7 @@ class CartPage extends Component {
               <div className="card-container">
                 {cart.map((order) => (
                   <CartItem
-                    key={order._id}
+                    key={order.id}
                     order={order}
                     handleCloseCartItem={handleCloseCartItem}
                   />
@@ -58,12 +60,12 @@ class CartPage extends Component {
               <div
                 className="button"
                 onClick={() => {
-                  if (currentAccount._id === null) {
+                  if (localStorage.getItem('email') === null) {
                     handleAlert(true);
                   }
                 }}
               >
-                <Button title="Checkout" />
+                <Button title="Checkout" onClick={() => (alert("Proceed to payment gateway"))}/>
               </div>
             </div>
           </div>

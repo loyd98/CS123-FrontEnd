@@ -10,16 +10,16 @@ class CardList extends Component {
         <div className="container-sub">
           <span>
             <div>
-              <h1>{order.name}</h1>
-              <img src={order.imgLink} alt="item" />
+              <h1>{order.Name}</h1>
+              <img src={"http://localhost:1337" + order.Image.url} alt="item" />
             </div>
 
             <h2>{order.quantity}</h2>
-            <h2>{`P${order.price}`}</h2>
+            <h2>{`P${order.Price}`}</h2>
           </span>
           <i
             onClick={(e) => handleCloseCartItem(e)}
-            data-remove={order._id}
+            data-remove={order.id}
             className="fas fa-times-circle exit"
           />
         </div>

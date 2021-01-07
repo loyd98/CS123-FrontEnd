@@ -83,9 +83,10 @@ class ItemModal extends Component {
             <Button
               title="Add to Cart"
               onClick={(e) => {
-                if (currentAccount._id === null) {
+                if (localStorage.getItem('email') === null) {
                   handleAlert(true);
                 } else {
+                    console.log(currentItem)
                   handleAddToCart(currentItem, this.state.count);
                   handleModalVisibility(e, false, {});
                   resetCount();

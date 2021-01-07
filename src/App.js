@@ -122,7 +122,7 @@ class App extends Component {
 
     if (this.state.cart.length > 0) {
       this.state.cart.forEach((item) => {
-        subtotal += item.price * item.quantity;
+        subtotal += item.Price * item.quantity;
       });
     }
 
