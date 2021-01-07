@@ -3,37 +3,39 @@ import "./profilePage.scoped.css";
 import Button from "../button/button";
 
 class ProfilePage extends Component {
+
   render() {
     const {
-      currentAccount,
-      isEditing,
-      handleEditing,
-      handleAlert,
-    } = this.props;
+        isEditing,
+        handleAlert,
+        handleEditing,
+        currentAccount
+      } = this.props;
 
+    
     return (
       <div className="container">
         <h1>Account</h1>
         <form>
           <div className="input">
             <p>First Name</p>
-            <input disabled={!isEditing} value={currentAccount.firstName} />
+            <input disabled={!isEditing} value={localStorage.getItem('firstName')} />
           </div>
           <div className="input">
             <p>Last Name</p>
-            <input disabled={!isEditing} />
+            <input disabled={!isEditing} value={localStorage.getItem('lastName')}/>
           </div>
           <div className="input">
             <p>Email</p>
-            <input disabled={!isEditing} />
+            <input disabled={!isEditing} value={localStorage.getItem('email')} />
           </div>
           <div className="input">
             <p>Phone</p>
-            <input disabled={!isEditing} />
+            <input disabled={!isEditing} value={localStorage.getItem('phone')} />
           </div>
           <div className="text-area">
             <p>Address</p>
-            <textarea disabled={!isEditing} />
+            <textarea disabled={!isEditing} value={localStorage.getItem('address')} />
           </div>
           {/* todo: Handle saving the edited profile. */}
           <div
